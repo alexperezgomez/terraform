@@ -1,10 +1,4 @@
-# Starter pipeline
-- task: TerraformTaskV4@4
-  inputs:
-    provider: 'aws'
-    command: 'init'
-    backendServiceAWS: 'Service Conection Alex'
-    backendAWSBucketName: 'waf5000'
+
 
 
 - task: TerraformTaskV4@4
@@ -29,3 +23,18 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+  # Starter pipeline
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'aws'
+    command: 'init'
+    backendServiceAWS: 'Service Conection Alex'
+    backendAWSBucketName: 'waf5000'
+    
+    
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'validate'
